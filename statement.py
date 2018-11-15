@@ -15,25 +15,20 @@ def statement(invoice, plays):
     for perf in invoice.performances:
         None
         play = plays[perf.playID]
-        thisAmount = 0;
+        thisAmount = 0
 
         if play['type'] == 'tragedy':
-            None
-        # switch (play.type) {
-        # case "tragedy":
-        # thisAmount = 40000;
-        # if (perf.audience > 30) {
-        #   thisAmount += 1000 * (perf.audience - 30);
-        # }
-        # break;
+            if play['type'] == "tragedy":
+                thisAmount = 40000
+            if perf['audience'] > 30:
+                thisAmount += 1000 * (perf.audience - 30)
+
         elif play['type'] == 'comedy':
             None
-        # thisAmount = 30000;
-        # if (perf.audience > 20) {
-        #   thisAmount += 10000 + 500 * (perf.audience - 20);
-        # }
-        # thisAmount += 300 * perf.audience;
-        # break;
+            thisAmount = 30000
+            if perf['audience'] > 20:
+                thisAmount += 10000 + 500 * (perf.audience - 20);
+            thisAmount += 300 * perf.audience;
         else:
             raise Exception(f'unknown type: {play["type"]}')
 
