@@ -2,7 +2,7 @@ from statement import statement
 
 # invoice is a dict, like this:
 
-invoice = """              
+invoice = """
 [
   {
     "customer": "BigCo",

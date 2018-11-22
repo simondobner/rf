@@ -11,7 +11,7 @@ def statement(invoice, plays):
     format = {'lang': "en-US",
               'style': "currency",
               'currency': "USD",
-              'minimumFractionDigits': 2};
+              'minimumFractionDigits': 2}
 
     for perf in invoice[0]['performances']:
         print(f"--->{perf}")
@@ -27,8 +27,8 @@ def statement(invoice, plays):
         elif play['type'] == 'comedy':
             thisAmount = 30000
             if perf['audience'] > 20:
-                thisAmount += 10000 + 500 * (perf.audience - 20);
-            thisAmount += 300 * perf.audience;
+                thisAmount += 10000 + 500 * (perf.audience - 20)
+            thisAmount += 300 * perf.audience
         else:
             raise Exception(f'unknown type: {play["type"]}')
 
