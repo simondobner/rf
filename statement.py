@@ -6,15 +6,15 @@ def statement(invoice, plays):
     totalAmount = 0
     volumeCredits = 0
     invoice = json.loads(invoice)
-    result = "Statement for ".format(invoice['customer'])
+    result = f"Statement for {invoice[0]['customer']}"
 
     format = {'lang': "en-US",
               'style': "currency",
               'currency': "USD",
               'minimumFractionDigits': 2};
 
-    for perf in invoice.performances:
-        None
+    for perf in invoice[0]['performances']:
+        print(f"--->{perf}")
         play = plays[perf.playID]
         thisAmount = 0
 
