@@ -48,8 +48,8 @@ def statement(invoice, plays):
         result += f"{play['name']}: {this_amount/100} {perf['audience']} (seats)\n"
         total_amount += this_amount
 
-    result += f'Amount owed is {total_amount/100}\n'
-    result += f'You earned {volume_credits} credits\n'
+    result += f'  Amount owed is {total_amount/100}\n'
+    result += f'  You earned {volume_credits} credits\n'
 
     return result
 
